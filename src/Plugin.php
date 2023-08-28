@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Xact\Phpstan;
+namespace Xact\Phpstan\Dev;
 
 use Composer\Composer;
 use Composer\InstalledVersions;
