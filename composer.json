@@ -1,0 +1,30 @@
+{
+    "name": "xactsystems/phpstan-dev",
+    "description": "Package to extract and provide PHPStan source code for developing custom rules",
+    "type": "composer-plugin",
+    "version": "1.0.0",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "phpstan/phpstan": "^1.10",
+        "composer-plugin-api": "^2.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Xact\\PHPStan\\": "src/",
+            "PHPStan\\": "phpstan/src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ian Foulds",
+            "email": "ianfoulds@x-act.co.uk"
+        }
+    ],
+    "extra": {
+        "class": "Xact\\PHPStan\\Plugin"
+    },
+    "require-dev": {
+        "composer/composer": "^2.5"
+    }
+}

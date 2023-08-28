@@ -1,0 +1,44 @@
+parameters:
+    level: 9
+    treatPhpDocTypesAsCertain: false
+    checkGenericClassInNonGenericObjectType: false
+    doctrine:
+        objectManagerLoader: pipeline/phpstan/doctrine-orm-bootstrap.php
+
+    bootstrapFiles:
+        # Prevent PHPUnit\Framework\TestCase from being reported as not found
+        - vendor/bin/.phpunit/phpunit/vendor/autoload.php
+
+    paths:
+        - src
+        - tests
+
+    excludePaths:
+        analyseAndScan:
+            - src/Path.php
+
+    unused_public:
+        methods: true
+        properties: true
+        constants: true
+        local_methods: true
+
+    symfony:
+        container_xml_path: ./var/cache/dev/srcApp_KernelDevDebugContainer.xml
+
+    ignoreErrors:
+        - '#Parameter \#1 \$val of method Microsoft\\Graph\\Model\\FileAttachment\:\:setContentBytes\(\) expects GuzzleHttp\\Psr7\\Stream, string given#'
+        - '#Public method "App\\DTO\\[a-zA-Z0-9\\_]+\:\:(get|is)[a-zA-Z0-9\\_]+\(\)" is never used#'
+        - '#Property App\\Entity\\[a-zA-Z0-9\\_]+\:\:\$[a-zA-Z0-9_]+ is never written, only read#'
+        - '#Public method "App\\Entity\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+\(\)" (is never used|is used only locally)#'
+        - '#Public constant "App\\Entity\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+" is never used#'
+        - '#Property App\\Entity\\(Order|OrderSparse)\:\:\$criticalPath type mapping mismatch#'
+        - '#Public method "App\\Event\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+\(\)" is never used#'
+        - '#Public method "App\\Http\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+\(\)" is never used#'
+        - '#Public constant "App\\JasperReports\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+" is never used#'
+        - '#Public method "App\\JasperReports\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+\(\)" is never used#'
+        - '#Public method "App\\Microsoft365\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+\(\)" is never used#'
+        - '#Public constant "App\\Microsoft365\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+" is never used#'
+        - '#Public property "App\\Model\\[a-zA-Z0-9\\_]+\:\:\$[a-zA-Z0-9\\_]+" is never used#'
+        - '#Public constant "App\\Model\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+" is never used#'
+        - '#Public method "App\\Model\\[a-zA-Z0-9\\_]+\:\:[a-zA-Z0-9\\_]+\(\)" is never used#'
