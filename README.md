@@ -17,6 +17,10 @@ To use this extension, require it in Composer:
 composer require --dev xactsystems/phpstan-dev
 ```
 
+Authorise the plugin, please answer y to the following prompt:
+xactsystems/phpstan-dev contains a Composer plugin which is currently not in your allow-plugins config. See https://getcomposer.org/allow-plugins
+Do you trust "xactsystems/phpstan-dev" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?] y
+
 ## Usage
 
 This plugin will expose the \PHPStan namespace so that you can create your custom rules and collectors.
@@ -24,10 +28,6 @@ This plugin will expose the \PHPStan namespace so that you can create your custo
 See the following pages for more details:
 https://phpstan.org/developing-extensions/rules
 https://phpstan.org/developing-extensions/collectors
-
-Authorise the plugin, please answer y to the following prompt:
-xactsystems/phpstan-dev contains a Composer plugin which is currently not in your allow-plugins config. See https://getcomposer.org/allow-plugins
-Do you trust "xactsystems/phpstan-dev" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?] y
 
 ## Why a plugin?
 Although there are events within the Composer ecosystem, none of these fire for the packages being managed, they fire only for the top level package that is requiring them. Composer plugins on the other hand fire within the package being required.
