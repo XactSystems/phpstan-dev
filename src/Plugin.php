@@ -51,5 +51,9 @@ class Plugin implements PluginInterface
             $phar = new Phar($pharPath);
             $phar->extractTo($extractPath);
         }
+
+        if (!file_exists($extractPath) || !file_exists("{$extractPath}/src")) {
+            throw new Exception("Could not find phpstan/src after extracting the .phar file.");
+        }
     }
 }

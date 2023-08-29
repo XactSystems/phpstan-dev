@@ -22,7 +22,7 @@
         }
     ],
     "extra": {
-        "class": "Xact\\PHPStan\\Plugin"
+        "class": "Xact\\PHPStan\\Dev\\Plugin"
     },
     "require-dev": {
         "composer/composer": "^2.5"
